@@ -7,7 +7,7 @@ License:	Distributable
 Group:		Development/Languages/Python
 Group(de):	Entwicklung/Sprachen/Python
 Group(pl):	Programowanie/Jêzyki/Python
-Source0:	http://pylab.sourceforge.net/packages/cephes-%{version}.tgz
+Source0:	http://pylab.sourceforge.net/packages/cephes-%{version}.tar.gz
 URL:		http://pylab.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	python >= 1.5, python-numpy >= 1.3
