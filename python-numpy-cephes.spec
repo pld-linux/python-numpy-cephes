@@ -3,7 +3,7 @@ Summary(pl):	Interfejs Pythona do biblioteki cephes
 Name:		python-numpy-cephes
 Version:	1.3
 Release:	1
-License:	Distributable
+License:	distributable
 Group:		Development/Languages/Python
 Group(de):	Entwicklung/Sprachen/Python
 Group(pl):	Programowanie/Jêzyki/Python
