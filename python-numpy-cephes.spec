@@ -1,11 +1,11 @@
-
+%include /usr/lib/rpm/macros.python
 %define mname cephes
 
 Summary:	Python interface to the cephes library
 Summary(pl):	Interfejs Pythona do biblioteki cephes
 Name:		python-numpy-cephes
 Version:	1.3
-Release:	1
+Release:	2
 License:	distributable
 Group:		Development/Languages/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
@@ -17,8 +17,6 @@ Requires:	python-numpy >= 1.3
 %pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%include /usr/lib/rpm/macros.python
-
 %description
 Special functions for Numerical python.
 
@@ -28,7 +26,7 @@ error, and elliptic integrals. It is based on the cephes library
 available from netlib.org.
 
 %description -l pl
-Cephes to zestaw funkcji dzia³aj±cych z tablicami zdefiniowanymi w
+Cephes to zestaw funkcji operuj±cych na tablicach zdefiniowanych w
 module Numerical Python. Zawieraj± funkcje takie jak bessel, b³±d,
 ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 
@@ -44,12 +42,10 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_sitedir}/NumPy
 install *.so $RPM_BUILD_ROOT%{py_sitedir}/NumPy
 
-gzip -9nf docs/included_functions.html docs/cephes.txt README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/included_functions.html* docs/cephes.txt* README*
+%doc docs/included_functions.html docs/cephes.txt README
 %{py_sitedir}/NumPy/cephesmodule.so
