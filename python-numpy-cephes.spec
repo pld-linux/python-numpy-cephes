@@ -39,7 +39,7 @@ ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 
 %build
 %{__make} OPT="%{rpmcflags}" \
-	INCLUDES="-I%{_includedir}/python%{py_ver} -I%{_includedir}/python%{py_ver}/Numeric"
+	INCLUDES="-I%{py_incdir} -I%{py_incdir}/Numeric"
 
 %install
 rm -rf $RPM_BUILD_ROOT
