@@ -21,7 +21,7 @@ library available from netlib.org
 %setup -n cephes
 
 %build
-make OPT="$RPM_OPT_FLAGS"
+%{__make} OPT="$RPM_OPT_FLAGS"
 
 %install
 install -d $RPM_BUILD_ROOT%{_libdir}/python1.5/site-packages/NumPy
