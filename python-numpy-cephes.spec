@@ -6,7 +6,7 @@ Copyright: Distributable
 Packager: Travis Oliphant <Oliphant.Travis@mayo.edu>
 Group: Development/Languages/Python
 Source0: cephes-0.71.tgz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires: python >= 1.5, python-numpy >= 1.3
 
 %description 
@@ -16,7 +16,6 @@ Cephes is a collection of routines which work on arbitrary
 multiarrays defined by Numerical Python.  It defines functions such
 as bessel, error, and elliptic integrals.  It is based on the cephes 
 library available from netlib.org
-
 
 %prep
 %setup -n cephes
