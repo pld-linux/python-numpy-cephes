@@ -13,8 +13,9 @@ Group(pl):	Programowanie/Jêzyki/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
 URL:		http://pylab.sourceforge.net/
 BuildRequires:	python-devel >= 1.5
-%requires_eq	python
+BuildRequires:	python-numpy-devel >= 1.3
 Requires:	python-numpy >= 1.3
+%requires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %include /usr/lib/rpm/macros.python
@@ -36,18 +37,20 @@ ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 %setup -q -n %{mname}-%{version}
 
 %build
-%{__make} OPT="%{rpmcflags}"
+%{__make} OPT="%{rpmcflags}" \
+	INCLUDES="-I%{_includedir}/python%{py_ver} -I%{_includedir}/python%{py_ver}/Numeric"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_sitedir}/NumPy
 install *.so $RPM_BUILD_ROOT%{py_sitedir}/NumPy
 
+gzip -9nf docs/included_functions.html docs/cephes.txt README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/cephes.txt README
-%doc docs/included_functions.html
+%doc docs/included_functions.html* docs/cephes.txt* README*
 %{py_sitedir}/NumPy/cephesmodule.so
