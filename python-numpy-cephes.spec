@@ -13,7 +13,7 @@ Group(pl):	Programowanie/Jêzyki/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
 URL:		http://pylab.sourceforge.net/
 BuildRequires:	python-devel >= 1.5
-Requires:	python >= 1.5
+%requires_eq	python
 Requires:	python-numpy >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
