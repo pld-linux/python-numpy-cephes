@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %include /usr/lib/rpm/macros.python
 
-%description 
+%description
 Special functions for Numerical python.
 
 Cephes is a collection of routines which work on arbitrary multiarrays
