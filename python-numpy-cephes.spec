@@ -1,5 +1,5 @@
-%include /usr/lib/rpm/macros.python
-%define mname cephes
+%include	/usr/lib/rpm/macros.python
+%define	mname	cephes
 
 Summary:	Python interface to the cephes library
 Summary(pl):	Interfejs Pythona do biblioteki cephes
@@ -19,7 +19,7 @@ Requires:	python-numpy >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Special functions for Numerical python.
+Special functions for Numerical Python.
 
 Cephes is a collection of routines which work on arbitrary multiarrays
 defined by Numerical Python. It defines functions such as bessel,
@@ -28,7 +28,7 @@ available from netlib.org.
 
 %description -l pl
 Cephes to zestaw funkcji operuj±cych na tablicach zdefiniowanych w
-module Numerical Python. Zawieraj± funkcje takie jak bessel, b³±d,
+module Numerical Python. Zawieraj± m.in. funkcje Bessela, b³êdu i
 ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 
 %prep
