@@ -14,7 +14,7 @@ BuildRequires:	python-devel >= 1.5
 BuildRequires:	python-numpy-devel >= 1.3
 BuildRequires:	rpm-pythonprov
 Requires:	python-numpy >= 1.3
-%requires_eq	python
+%pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %include /usr/lib/rpm/macros.python
