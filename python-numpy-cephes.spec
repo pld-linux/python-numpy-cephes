@@ -9,6 +9,7 @@ Release:	2
 License:	distributable
 Group:		Development/Languages/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
+# Source0-md5:	55de90ee4f2d48e8da6054d0a5f4dd74
 URL:		http://pylab.sourceforge.net/
 BuildRequires:	python-devel >= 1.5
 BuildRequires:	python-numpy-devel >= 1.3
