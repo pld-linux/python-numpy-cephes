@@ -1,3 +1,6 @@
+
+%define mname cephes
+
 Summary:	Python interface to the cephes library
 Summary(pl):	Interfejs Pythona do biblioteki cephes
 Name:		python-numpy-cephes
@@ -7,10 +10,14 @@ License:	distributable
 Group:		Development/Languages/Python
 Group(de):	Entwicklung/Sprachen/Python
 Group(pl):	Programowanie/Jêzyki/Python
-Source0:	http://pylab.sourceforge.net/packages/cephes-%{version}.tar.gz
+Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
 URL:		http://pylab.sourceforge.net/
+BuildRequires:	python-devel >= 1.5
+Requires:	python >= 1.5
+Requires:	python-numpy >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	python >= 1.5, python-numpy >= 1.3
+
+%include /usr/lib/rpm/macros.python
 
 %description 
 Special functions for Numerical python.
@@ -26,15 +33,15 @@ module Numerical Python. Zawieraj± funkcje takie jak bessel, b³±d,
 ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 
 %prep
-%setup -q -n cephes
+%setup -q -n %{mname}-%{version}
 
 %build
 %{__make} OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/python1.5/site-packages/NumPy
-install *.so $RPM_BUILD_ROOT%{_libdir}/python1.5/site-packages/NumPy
+install -d $RPM_BUILD_ROOT%{py_sitedir}/NumPy
+install *.so $RPM_BUILD_ROOT%{py_sitedir}/NumPy
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -43,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/cephes.txt README
 %doc docs/included_functions.html
-%{_libdir}/python1.5/site-packages/NumPy/cephesmodule.so
+%{py_sitedir}/NumPy/cephesmodule.so
