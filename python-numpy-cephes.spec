@@ -8,11 +8,6 @@ Version:	1.3
 Release:	1
 License:	distributable
 Group:		Development/Languages/Python
-Group(de):	Entwicklung/Sprachen/Python
-Group(es):	Desarrollo/Lenguages/Python
-Group(fr):	Development/Langues/Python
-Group(pl):	Programowanie/Jêzyki/Python
-Group(pt):	Desenvolvimento/Línguas/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
 URL:		http://pylab.sourceforge.net/
 BuildRequires:	python-devel >= 1.5
