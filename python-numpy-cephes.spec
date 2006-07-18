@@ -10,9 +10,9 @@ Group:		Development/Languages/Python
 Source0:	http://pylab.sourceforge.net/packages/%{mname}-%{version}.tar.gz
 # Source0-md5:	55de90ee4f2d48e8da6054d0a5f4dd74
 URL:		http://pylab.sourceforge.net/
+BuildRequires:	python-Numeric-devel >= 1.3
 BuildRequires:	python-devel >= 1.5
-BuildRequires:	python-numpy-devel >= 1.3
-Requires:	python-numpy >= 1.3
+Requires:	python-Numeric >= 1.3
 %pyrequires_eq	python
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,13 +33,19 @@ ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
 %setup -q -n %{mname}-%{version}
 
 %build
-%{__make} OPT="%{rpmcflags}" \
+%{__make} \
+	OPT="%{rpmcflags}" \
 	INCLUDES="-I%{py_incdir} -I%{py_incdir}/Numeric"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitedir}/NumPy
-install *.so $RPM_BUILD_ROOT%{py_sitedir}/NumPy
+install -d $RPM_BUILD_ROOT%{py_sitedir}/SpecialFuncs
+install *.so $RPM_BUILD_ROOT%{py_sitedir}/SpecialFuncs
+install SpecialFuncs.py $RPM_BUILD_ROOT%{py_sitedir}/SpecialFuncs
+
+%py_comp %{py_sitedir}/SpecialFuncs
+%py_ocomp %{py_sitedir}/SpecialFuncs
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,4 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc docs/included_functions.html docs/cephes.txt README
-%{py_sitedir}/NumPy/cephesmodule.so
+%dir %{py_sitedir}/SpecialFuncs
+%{py_sitedir}/SpecialFuncs/SpecialFuncs.py[co]
+%attr(755,root,root) %{py_sitedir}/SpecialFuncs/cephesmodule.so
