@@ -1,7 +1,7 @@
 %define	mname	cephes
 
 Summary:	Python interface to the cephes library
-Summary(pl):	Interfejs Pythona do biblioteki cephes
+Summary(pl.UTF-8):   Interfejs Pythona do biblioteki cephes
 Name:		python-numpy-cephes
 Version:	1.3
 Release:	2
@@ -24,10 +24,10 @@ defined by Numerical Python. It defines functions such as bessel,
 error, and elliptic integrals. It is based on the cephes library
 available from netlib.org.
 
-%description -l pl
-Cephes to zestaw funkcji operuj±cych na tablicach zdefiniowanych w
-module Numerical Python. Zawieraj± m.in. funkcje Bessela, b³êdu i
-ca³ki eliptyczne. Bazuje na bibliotece cephes dostêpnej z netlib.org.
+%description -l pl.UTF-8
+Cephes to zestaw funkcji operujÄ…cych na tablicach zdefiniowanych w
+module Numerical Python. ZawierajÄ… m.in. funkcje Bessela, bÅ‚Ä™du i
+caÅ‚ki eliptyczne. Bazuje na bibliotece cephes dostÄ™pnej z netlib.org.
 
 %prep
 %setup -q -n %{mname}-%{version}
