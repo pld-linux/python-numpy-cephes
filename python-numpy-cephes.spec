@@ -1,7 +1,7 @@
 %define	mname	cephes
 
 Summary:	Python interface to the cephes library
-Summary(pl.UTF-8):   Interfejs Pythona do biblioteki cephes
+Summary(pl.UTF-8):	Interfejs Pythona do biblioteki cephes
 Name:		python-numpy-cephes
 Version:	1.3
 Release:	2
